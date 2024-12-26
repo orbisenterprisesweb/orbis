@@ -82,28 +82,34 @@
       
             
     <style>
-        
-        iframe {
-            width: 100%;
-            border: none;
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
         }
+
+        .iframe-container {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            position: relative;
+        }
+
+            .iframe-container iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
     </style>
     
-        <h1>Orbis Enterprises News</h1>
-        <iframe id="newsIframe"
-                src="https://orbisenterprises-news.blogspot.com/"></iframe>
-        <script>
-            const iframe = document.getElementById('newsIframe');
-
-            iframe.addEventListener('load', () => {
-                // Adjust iframe height dynamically
-                iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-            });
-        </script>
+        <div class="iframe-container">
+            <iframe src="https://orbisenterprises-news.blogspot.com/"></iframe>
+        </div>
 
 
 
-        <!-- Testimonial End -->
+  
         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s" style="margin-top: 6rem;">
             <div class="container py-5">
